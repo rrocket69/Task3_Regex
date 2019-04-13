@@ -7,6 +7,7 @@ package ua.training;
  */
 public interface Constants {
     String INPUTERROR = "input.error";
+    String LOGIN_INPUTERROR = "input.login.error";
 
     String FAMILY_NAME = "input.family.name.data";
     String FIRST_NAME = "input.first.name.data";

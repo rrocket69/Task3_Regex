@@ -1,10 +1,13 @@
 package ua.training.Controller;
 
 import ua.training.Constants;
+import ua.training.Model.NotUniqueLoginException;
+import ua.training.Model.RecordBook;
 import ua.training.View.View;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  *
@@ -12,9 +15,12 @@ import java.io.IOException;
 class UtilityController {
     private BufferedReader reader;
     private View view;
-    UtilityController(View view,BufferedReader reader){
-        this.reader = reader;
+    private RecordBook recordBook;
+
+    UtilityController(View view, RecordBook recordBook){
+        reader = new BufferedReader(new InputStreamReader(System.in));
         this.view = view;
+        this.recordBook = recordBook;
     }
 
     /**
@@ -29,11 +35,18 @@ class UtilityController {
             try {
                 view.printMessage(output);
                 res = reader.readLine();
-                if (res.matches(regex))
+                if(output.equals(Constants.LOGIN)){
+                    recordBook.checkUniqueLogin(res);
+                }
+                if (res.matches(regex)) {
                     return res;
+                }
                 else {
                     view.printMessage(Constants.INPUTERROR);
                 }
+            } catch (NotUniqueLoginException ex){
+                view.printMessage(Constants.LOGIN_INPUTERROR);
+                view.printString(ex.getReason());
             } catch (IOException e) {
                 view.printMessage(Constants.INPUTERROR);
             }

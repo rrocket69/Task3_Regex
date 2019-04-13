@@ -24,4 +24,7 @@ public class View {
     public void printMessage(String message) {
         System.out.println(bundle.getString(message));
     }
+    public void printString(String message){
+        System.out.println(message);
+    }
 }

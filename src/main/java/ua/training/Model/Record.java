@@ -5,13 +5,26 @@ package ua.training.Model;
  *
  * @author benjamin
  */
-public class Record {
+public class Record implements Cloneable {
     private String familyName;
     private String firstName;
     private String email;
     private String mobileNum;
     private String group;
     private String login;
+
+    public Record() {
+
+    }
+
+    /**
+     * Only to test login not unique exception
+     * delete after testing of unique logins
+     * @param login
+     */
+    public Record(String login) {
+        this.login = login;
+    }
 
     public String getShortName() {
         return familyName + " " + firstName.charAt(0) + ".";
@@ -49,7 +62,6 @@ public class Record {
         return mobileNum;
     }
 
-
     public void setGroup(String group) {
         this.group = group;
     }
@@ -64,5 +76,15 @@ public class Record {
 
     public String getLogin() {
         return login;
+    }
+
+    @Override
+    public Record clone() {
+        try {
+            return (Record) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

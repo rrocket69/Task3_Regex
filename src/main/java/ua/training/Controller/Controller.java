@@ -1,5 +1,6 @@
 package ua.training.Controller;
 
+import ua.training.Model.Record;
 import ua.training.Model.RecordBook;
 import ua.training.View.View;
 
@@ -13,7 +14,6 @@ import java.io.InputStreamReader;
 public class Controller {
     private RecordBook recordBook;
     private View view;
-
     private BufferedReader reader;
 
     public Controller(RecordBook recordBook, View view) {
@@ -26,8 +26,12 @@ public class Controller {
      */
     public void startAction() {
         reader = new BufferedReader(new InputStreamReader(System.in));
+        recordBook.confirmRecord(new Record("admin"));
+        recordBook.confirmRecord(new Record("username1"));
+        recordBook.confirmRecord(new Record("username2"));
 
-        recordBook.confirmRecord(new InputRecord(view,reader).getRecord());
+        recordBook.confirmRecord(new InputRecord(view).insertRecordInto(recordBook.clone()));
+
 
     }
 }
