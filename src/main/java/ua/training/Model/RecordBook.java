@@ -12,22 +12,14 @@ public class RecordBook {
      */
     private ArrayList<Record> records;
 
-    private Record draft;
-
     public RecordBook(){
         records = new ArrayList<Record>();
-        draft = new Record();
     }
 
     /**
      * Сохраняет запись в книжке
      */
-    public void confirmRecord(){
-        records.add(draft);
-        draft = new Record();
-    }
-
-    public Record getDraft() {
-        return draft;
+    public void confirmRecord(Record record){
+        records.add(record);
     }
 }

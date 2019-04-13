@@ -2,6 +2,7 @@ package ua.training.Model;
 
 /**
  * Класс записи в записной книжке
+ *
  * @author benjamin
  */
 public class Record {
@@ -10,7 +11,7 @@ public class Record {
     private String email;
     private String mobileNum;
     private String group;
-    private String address;
+    private String login;
 
     public String getShortName() {
         return familyName + " " + firstName.charAt(0) + ".";
@@ -48,13 +49,6 @@ public class Record {
         return mobileNum;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getAddress() {
-        return address;
-    }
 
     public void setGroup(String group) {
         this.group = group;
@@ -62,5 +56,13 @@ public class Record {
 
     public String getGroup() {
         return group;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getLogin() {
+        return login;
     }
 }

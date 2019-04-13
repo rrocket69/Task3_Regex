@@ -1,6 +1,4 @@
-package ua.training;
-
-import java.util.regex.Pattern;
+package ua.training.Controller;
 
 /**
  * Класс проверки группы
