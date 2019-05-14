@@ -1,4 +1,4 @@
-package ua.training.Model;
+package ua.training.model.entity;
 
 /**
  * Класс записи в записной книжке
@@ -6,6 +6,7 @@ package ua.training.Model;
  * @author benjamin
  */
 public class Record implements Cloneable {
+    private int id;
     private String familyName;
     private String firstName;
     private String email;
@@ -20,9 +21,21 @@ public class Record implements Cloneable {
     /**
      * Only to test login not unique exception
      * delete after testing of unique logins
+     *
      * @param login
      */
     public Record(String login) {
+        this.login = login;
+    }
+
+    public Record(String firstName, String login) {
+        this.firstName = firstName;
+        this.login = login;
+    }
+
+    public Record(int id, String firstName, String login) {
+        this.id = id;
+        this.firstName = firstName;
         this.login = login;
     }
 
@@ -76,6 +89,23 @@ public class Record implements Cloneable {
 
     public String getLogin() {
         return login;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Record{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", login='" + login + '\'' +
+                '}';
     }
 
     @Override

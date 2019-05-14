@@ -1,4 +1,4 @@
-package ua.training.Controller;
+package ua.training.controller;
 
 /**
  * Класс проверки группы

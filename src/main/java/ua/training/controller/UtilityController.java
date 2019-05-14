@@ -1,9 +1,9 @@
-package ua.training.Controller;
+package ua.training.controller;
 
 import ua.training.Constants;
-import ua.training.Model.NotUniqueLoginException;
-import ua.training.Model.RecordBook;
-import ua.training.View.View;
+import ua.training.model.entity.NotUniqueLoginException;
+import ua.training.model.entity.RecordBook;
+import ua.training.view.View;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,6 +35,7 @@ class UtilityController {
             try {
                 view.printMessage(output);
                 res = reader.readLine();
+
                 if(output.equals(Constants.LOGIN)){
                     recordBook.checkUniqueLogin(res);
                 }

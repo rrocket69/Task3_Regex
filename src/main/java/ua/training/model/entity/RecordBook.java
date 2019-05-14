@@ -1,4 +1,4 @@
-package ua.training.Model;
+package ua.training.model.entity;
 
 import java.util.ArrayList;
 

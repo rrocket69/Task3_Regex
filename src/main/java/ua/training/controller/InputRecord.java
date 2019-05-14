@@ -1,9 +1,9 @@
-package ua.training.Controller;
+package ua.training.controller;
 
 import ua.training.Constants;
-import ua.training.Model.Record;
-import ua.training.Model.RecordBook;
-import ua.training.View.View;
+import ua.training.model.entity.Record;
+import ua.training.model.entity.RecordBook;
+import ua.training.view.View;
 
 /**
  *

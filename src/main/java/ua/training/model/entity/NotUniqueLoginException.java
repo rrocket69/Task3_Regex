@@ -1,4 +1,4 @@
-package ua.training.Model;
+package ua.training.model.entity;
 
 public class NotUniqueLoginException extends Exception{
     private String reason;

@@ -1,11 +1,8 @@
-package ua.training.Controller;
+package ua.training.controller;
 
-import ua.training.Model.Record;
-import ua.training.Model.RecordBook;
-import ua.training.View.View;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import ua.training.model.entity.Record;
+import ua.training.model.entity.RecordBook;
+import ua.training.view.View;
 
 /**
  * Класс контроллер, который выполняет основные действия
@@ -14,7 +11,6 @@ import java.io.InputStreamReader;
 public class Controller {
     private RecordBook recordBook;
     private View view;
-    private BufferedReader reader;
 
     public Controller(RecordBook recordBook, View view) {
         this.recordBook = recordBook;
@@ -25,13 +21,10 @@ public class Controller {
      * Метод, в котором описан порядок действий
      */
     public void startAction() {
-        reader = new BufferedReader(new InputStreamReader(System.in));
         recordBook.confirmRecord(new Record("admin"));
         recordBook.confirmRecord(new Record("username1"));
         recordBook.confirmRecord(new Record("username2"));
 
         recordBook.confirmRecord(new InputRecord(view).insertRecordInto(recordBook.clone()));
-
-
     }
 }

@@ -1,8 +1,8 @@
 package ua.training;
 
-import ua.training.Controller.Controller;
-import ua.training.Model.RecordBook;
-import ua.training.View.View;
+import ua.training.controller.Controller;
+import ua.training.model.entity.RecordBook;
+import ua.training.view.View;
 
 /**
  * Главный класс
